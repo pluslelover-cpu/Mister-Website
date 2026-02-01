@@ -1,56 +1,55 @@
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
 html {
+    height: auto;
     scroll-behavior: smooth;
     scroll-snap-type: y mandatory;
-    height: 100%;
 }
 
 body {
     background-color: #1c0a1b;
     color: white;
-    height: 100%;
-    overflow-y: scroll;
+    min-height: 100vh;
 }
 
 #navbar {
-    position: fixed;
-    width: 100%;
     background-color: #541f52;
-    transition: opacity 0.25s;
-    z-index: 100;
-    padding: 20px 20px 20px 20px;
     opacity: 1;
+    padding: 20px 20px 20px 20px;
     pointer-events: auto;
+    position: fixed;
+    transition: opacity 0.25s;
+    width: 100%;
+    z-index: 100;
 }
 
 .nav-container {
-    width: 100%;
-    max-width: 1200px;
+    align-items: center;
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    max-width: 1200px;
+    width: 100%;
 }
 
 .logo {
-    font-family: "michroma", sans-serif;
     color: white;
+    font-family: "michroma", sans-serif;
     font-size: 1.5rem;
     font-weight: bold;
     text-decoration: none;
 }
 
 #start {
-    height: 100vh;
-    width: 100%;
+    align-items: center;
     display: flex;
     flex-direction: column;
+    height: 100vh;
     justify-content: center;
-    align-items: center;
+    width: 100%;
 }
 
 .avatar-container {
@@ -60,88 +59,92 @@ body {
 }
 
 .circle-avatar {
-    width: 200px;
-    height: 200px;
     border-radius: 50%;
-    object-fit: cover;
     border: 5px solid #ffffff;
+    height: 200px;
+    object-fit: cover;
+    width: 200px;
 }
 
 .block {
-    height: 100vh;
-    width: 100%;
-    flex-direction: column;
-    display: flex;
-    justify-content: center;
     align-items: center;
-    text-align: center;
     background-color: transparent;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    min-height: 100vh;
+    justify-content: center;
+    overflow: hidden;
+    padding: 100px 20px;
     position: relative;
-    overflow: visible;
     scroll-snap-align: start;
     scroll-snap-stop: always;
-    padding: 20px;
+    scroll-margin-top: 20px;
+    scroll-snap-align: start;
+    text-align: center;
+    width: 100%;
 }
 
 .hero-content {
+    align-items: center;
     display: flex;
     flex-direction: column;
-    align-items: center;
+    flex: auto;
     justify-content: center;
     width: 100%;
-    flex: auto;
+    gap: 15px;
 }
 
-.hero-text {
-    text-align: center;
+.hero-text h1 {
+    color: #ffffff;
     font-family: 'michroma', sans-serif;
     font-size: 18px;
-    color: #ffffff;
     letter-spacing: 2px;
-    text-transform: uppercase;
     margin-bottom: 20px;
+    text-align: center;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+    text-transform: uppercase;
 }
 
 .icon-container {
-    display: flex;
     align-items: center;
+    display: flex;
     justify-content: center;
 }
 
 .social-media {
     display: flex;
-    justify-content: center;
-    grid-template-columns: repeat(3, 1fr);
-    max-width: 280px;
-    gap: 20px;
     flex-wrap: wrap;
+    gap: 20px;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center;
+    max-width: 280px;
 }
 
 .social-media a {
-    display: flex;
-    justify-content: center;
     align-items: center;
-    width: 80px;
-    height: 80px;
     background: rgba(255, 255, 255, 0.1);
-    border: 2px solid rgba(255, 255, 255, 0.3);
     border-radius: 15px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
     color: white;
+    display: flex;
     font-size: 40px;
-    transition: all 0.3s ease;
+    height: 80px;
+    justify-content: center;
     text-decoration: none;
+    transition: all 0.3s ease;
+    width: 80px;
 }
 
 .section-title {
     color: #ffffff;
     font-family: 'michroma', sans-serif;
-    font-weight: 700;
     font-size: 3rem;
+    font-weight: 700;
     letter-spacing: 2px;
-    text-transform: uppercase;
     margin-bottom: 15px;
     text-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+    text-transform: uppercase;
 }
 
 .section-subtitle {
@@ -159,19 +162,19 @@ body {
 
 .menu {
     flex-direction: column;
-    width: 100%;
-    text-align: center;
     gap: 15px;
+    text-align: center;
+    width: 100%;
 }
 
 .menu-container {
+    background-color: #541f52;
     display: none;
     flex-direction: column;
-    width: 100%;
+    left: 0;
     position: absolute;
     top: 60px;
-    left: 0;
-    background-color: #541f52;
+    width: 100%;
 }
 
 .hamburger-menu {
@@ -191,55 +194,58 @@ body {
 }
 
 .bar {
+    background-color: white;
     display: block;
-    width: 25px;
     height: 3px;
     margin: 5px auto;
-    background-color: white;
     transition: all 0.3s ease-in-out;
+    width: 25px;
 }
 
 @media (min-width: 1024px) {
+
+    /* Esta es el contenido de la barra de navegacion */
     .nav-container {
-        max-width: 100%;
+        align-items: center;
+        display: flex;
         flex-direction: row;
+        height: auto;
         justify-content: space-between;
-    }
-    
-    .hamburger-menu {
-        display: none;
-        cursor: pointer;
-    }
-
-    .menu-container {
-        display: flex;
-        position: absolute;
-        top: 60px;
-        left: 0px;
-        justify-content: flex-end;
+        margin: 0 auto;
+        max-width: 1000px;
+        padding: 0 40px;
         width: 100%;
-        padding: 20px 0px;
     }
 
-    .menu-container.active {
-        display: flex;
+    #navbar {
+        padding-top: 8px;
+        padding-bottom: 8px;
     }
 
     .menu {
         display: flex;
+        flex-direction: row;
+        gap: 30px;
         list-style: none;
-        gap: 20px;
+        margin: 0;
+    }
+
+    .menu-container {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
     }
 
     .menu li a {
-        font-family: "michroma", sans-serif;
-        font-weight: 400px;
-        font-style: normal;
-        font-size: 16px;
-        text-decoration: none;
         color: white;
-        position: relative;
+        font-family: "michroma", sans-serif;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400px;
         padding-bottom: 5px;
+        position: relative;
+        text-decoration: none;
     }
 
     .menu li a:hover::after {
@@ -247,55 +253,63 @@ body {
     }
 
     .menu li {
-        padding: 15px 0;
+        padding: 10px 0;
     }
 
     .logo {
-        font-size: 18px;
+        font-size: 24px;
     }
 
     .menu li a::after {
-        content: '';
-        position: absolute;
-        width: 0;
-        height: 2.5px;
-        bottom: 0px;
-        left: 0px;
         background-color: #9c359c;
+        bottom: 0px;
+        content: '';
+        height: 2.5px;
+        left: 0px;
+        position: absolute;
         transition: width 0.25s ease-out;
+        width: 0;
     }
 
     .menu li a {
         font-size: 12px;
     }
 
+    .hamburger-menu {
+        display: none;
+        cursor: pointer;
+    }
+
     #start {
-        padding-top: 100px;
+        padding-top: 140px;
+        height: 100vh;
+        justify-content: center;
     }
 
     .circle-avatar {
-        width: 120px;
-        height: 120px;
+        height: 180px;
+        width: 180px;
     }
 
     .hero-text {
-        font-size: 14px;
+        font-size: 20px;
         line-height: 1.5;
-        padding: 0 10px;
+        text-align: center;
     }
 
     .social-media {
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
+        gap: 15px;
         justify-content: center;
-        gap: 12px;
-        max-width: 280px;
-        padding: 0 10px;
+        width: 100%;
+        max-width: none;
     }
 
     .social-media a {
-        width: 65px;
-        height: 65px;
-        font-size: 28px;
+        font-size: 24px;
+        height: 70px;
+        width: 70px;
+        flex-shrink: 0;
     }
 
     .social-media a:hover {
@@ -354,25 +368,25 @@ body {
 }
 
 #loader-wrapper {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    align-items: center;
     background-color: #1c0a1b;
     display: flex;
+    height: 100%;
     justify-content: center;
-    align-items: center;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
     z-index: 9999;
 }
 
 .loader {
-    border: 8px solid #f3f3f3;
-    border-top: 8px solid #9c359c;
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
     animation: spin 1s linear infinite;
+    border-radius: 50%;
+    border-top: 8px solid #9c359c;
+    border: 8px solid #f3f3f3;
+    height: 60px;
+    width: 60px;
 }
 
 @keyframes spin {

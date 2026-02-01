@@ -1,15 +1,18 @@
 window.addEventListener('scroll', function() {
-    let navbar = document.getElementById("navbar");
-    let startSection = document.getElementById("start");
-    
-    let startRect = startSection.getBoundingClientRect();
+    const navbar = document.getElementById("navbar");
+    const menuContainer = document.querySelector('.menu-container');
 
-    if (startRect.bottom > 0) {
+    // Detectamos si el usuario ha bajado más de 80px
+    if (window.scrollY > 80) {
+        // Solo ocultamos si el menú móvil está cerrado
+        if (!menuContainer.classList.contains('active')) {
+            navbar.style.opacity = "0";
+            navbar.style.pointerEvents = "none";
+        }
+    } else {
+        // En la parte superior siempre se ve
         navbar.style.opacity = "1";
         navbar.style.pointerEvents = "auto";
-    } else {
-        navbar.style.opacity = "0";
-        navbar.style.pointerEvents = "none";
     }
 });
 
@@ -19,6 +22,13 @@ const menuContainer = document.querySelector('.menu-container');
 hamburgerMenu.addEventListener('click', () => {
     hamburgerMenu.classList.toggle('active');
     menuContainer.classList.toggle('active');
+    
+    // Al hacer clic, si abrimos el menú, nos aseguramos que el navbar se vea
+    let navbar = document.getElementById("navbar");
+    if (menuContainer.classList.contains('active')) {
+        navbar.style.opacity = "1";
+        navbar.style.pointerEvents = "auto";
+    }
 });
 
 window.addEventListener('load', () => {
