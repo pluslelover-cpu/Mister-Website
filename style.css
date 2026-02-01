@@ -47,14 +47,15 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    justify-content: center;
     width: 100%;
+    justify-content: center;
+    padding-top: 80px;
+    gap: 20px;
 }
 
 .avatar-container {
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
 }
 
 .circle-avatar {
@@ -74,7 +75,7 @@ body {
     min-height: 100vh;
     justify-content: center;
     overflow: hidden;
-    padding: 100px 20px;
+    padding: 80px 20px 20px 20px;
     position: relative;
     scroll-snap-align: start;
     scroll-snap-stop: always;
@@ -87,10 +88,10 @@ body {
     align-items: center;
     display: flex;
     flex-direction: column;
-    flex: auto;
     justify-content: center;
+    flex: none;
     width: 100%;
-    gap: 15px;
+    gap: 20px;
 }
 
 .hero-text h1 {
@@ -98,7 +99,6 @@ body {
     font-family: 'michroma', sans-serif;
     font-size: 18px;
     letter-spacing: 2px;
-    margin-bottom: 20px;
     text-align: center;
     text-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
     text-transform: uppercase;
@@ -113,9 +113,9 @@ body {
 .social-media {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 24px;
     justify-content: center;
-    max-width: 280px;
+    max-width: 400px;
 }
 
 .social-media a {
@@ -125,12 +125,12 @@ body {
     border: 2px solid rgba(255, 255, 255, 0.3);
     color: white;
     display: flex;
-    font-size: 40px;
-    height: 80px;
+    font-size: 36px;
+    height: 100px;
     justify-content: center;
     text-decoration: none;
     transition: all 0.3s ease;
-    width: 80px;
+    width: 100px;
 }
 
 .section-title {
@@ -222,13 +222,8 @@ body {
         font-size: 24px;
     }
 
-    .hamburger-menu {
-        display: none;
-        cursor: pointer;
-    }
-
     #start {
-        padding-top: 140px;
+        min-height: 100vh;
         height: 100vh;
         justify-content: center;
     }
@@ -239,6 +234,7 @@ body {
     }
 
     .hero-text {
+        max-width: 400px;
         font-size: 20px;
         line-height: 1.5;
         text-align: center;
@@ -253,9 +249,9 @@ body {
     }
 
     .social-media a {
-        font-size: 24px;
-        height: 70px;
-        width: 70px;
+        font-size: 34px;
+        height: 80px;
+        width: 80px;
         flex-shrink: 0;
     }
 
