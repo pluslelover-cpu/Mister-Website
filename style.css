@@ -195,7 +195,8 @@ footer {
     }
 
     .profile-name {
-        font-size: 0.5rem;
+        font-size: 0.75rem;
+        font-weight: 600;
     }
 
     .profile-bio {
@@ -212,6 +213,6 @@ footer {
     }
 
     .social-link i {
-        font-size: 20px;
+        font-size: 18px;
     }
 }
